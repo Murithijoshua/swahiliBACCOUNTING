@@ -1,0 +1,72 @@
+<!--- sidebar left of the page--->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+     <style type="text/css">
+        #accordionSidebar,.btn{
+        background-image: linear-gradient(to bottom right, #2193b0
+, #2193b0);
+}</style>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'home' %}">
+            <div class="sidebar-brand-icon rotate-n-5">
+              <i class="fas fa-bookmark"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3"><b>accounts</b></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+    <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url "index" %}">
+<!--            <i class="fas fa-sync fa-spin"></i><span>Dashboard</span>-->
+          </a>
+      </li>
+         <!-- Divider -->
+      <hr class="sidebar-divider">
+      <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link" href="{% url "current_assets" %}">
+          <i class="fas fa-briefcase"></i>
+          <span>accounts receivables</span></a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link"  href="{% url "accounts_payable" %}">
+          <i class="fas fa-building"></i>
+          <span>accounts payable</span></a>
+      </li>
+
+    <li class="nav-item">
+        <a class="nav-link"  href="{% url "liabilities_lib" %}">
+          <i class="fas fa-money-bill-alt"></i>
+          <span> Expenses</span></a>
+      </li>
+
+
+     <li class="nav-item">
+        <a class="nav-link" href="{% url "pending_payments" %}">
+          <i class="fas fa-money-bill"></i>
+          <span>payments</span></a>
+      </li>
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url "transactions" %}">
+          <i class="fas fa-handshake"></i>
+          <span>Transactions</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url "charts" %}">
+          <i class="fas fa-history"></i>
+          <span>Accounting Summary</span></a>
+      </li>
+
+    <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+</ul>

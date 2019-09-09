@@ -1,0 +1,44 @@
+{%extends "base.html"%}
+{%  block content %}
+<h1 class="h3 mb-2 text-gray-800">Payments</h1>
+          <p class="mb-4">chart of account for all payment done <a target="_blank" href="https://datatables.net"></a>.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">July-</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>number</th>
+                      <th>Type of payment</th>
+                        <th>purpose</th>
+                      <th>amount</th>
+                      <th>date</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Cheques</td>
+                        <td>Employee salaries</td>
+                      <td>{{salaries}}</td>
+                      <td>13-06-2019</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Cheque</td>
+                        <td>Allowances</td>
+                      <td>{{promotions}}</td>
+                      <td>13-06-2019</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+{% endblock %}

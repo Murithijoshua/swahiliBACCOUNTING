@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Expenses
+{% endblock %}
+{% block content  %}
+<h1 class="h3 mb-2 text-gray-800">Expenses Incurred</h1>
+          <p class="mb-4">summary<a target="_blank" href="https://datatables.net"></a>.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">July-2019</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th>Number</th>
+                      <th>Transaction_name</th>
+                      <th>Amount</th>
+                      <th>Category</th>
+
+                    </tr>
+                  </thead>
+                    <tbody>
+                 {% for p in expenses %}
+                    <tr>
+                      <td>{{ p.id }}</td>
+                      <td>{{ p.Transaction_name }}</td>
+                      <td>{{p.amount}}</td>
+                        <td>{{p.category}}</td>
+
+                    </tr>
+
+                    {% endfor %}
+                  </tbody>
+                </table>
+{% endblock %}

@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+{% block content %}
+
+ <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">summary of purchases(debit)</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th>product index</th>
+                      <th> product name</th>
+                      <th>Quantity</th>
+                      <th>Date_recieved</th>
+                        <th>supplier</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                 {% for p in expenses %}
+                    <tr>
+                      <td>{{ p.id }}</td>
+                      <td>{{ p.Product }}</td>
+                      <td>{{p.Quantity}}</td>
+                       <td>{{p.Date_recieved}}</td>
+                         <td>{{p.supplier}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+              </div>
+            </div>
+    </div>
+{{ p }}
+{% endblock %}
