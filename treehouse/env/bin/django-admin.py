@@ -1,4 +1,4 @@
-#!/home/slimmy/Desktop/accountingSb./treehouse/env/bin/python3
+#!/home/joshua/swahiliBACCOUNTING/treehouse/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

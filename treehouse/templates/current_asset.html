@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
 {% load static %}
-  <!--   <div class="card shadow mb-4">
+    <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">sales  during this month{% now "M" as current_Month %}</h6>
             </div>
@@ -11,18 +11,29 @@
                   <thead>
                     <tr>
                         <th>Number</th>
-                      <th> Type </th>
+                      <th>Invoice number</th>
+                      <th> customer name</th>
                       <th> Amount equivalent</th>
-                      <th>  Total</th>
-                      <th>{{ balance }}</th>
-
+                      <!-- <th>  Total Bank balaces</th> -->
+  
+                        
 
                     </tr>
                   </thead>
+                  <tr>
+                    {% for p in totals %}
+                    <th>{{p.id}}</th>
+                    <th>{{ p.invoice_number }}</th>
+                    <th>{{ p.customer }}</th>
+                    <th>{{p.Amount}}</th>
+                    <!-- <th>{{ balance }}</th> -->
+                  </tr>
+                  {% endfor %}
+
                     <tbody>
                     </tbody>
                 </table>
               </div>
-            </div> -->
+            </div>
     </div>
                  {%  endblock %}

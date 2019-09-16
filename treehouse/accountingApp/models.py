@@ -166,14 +166,14 @@ class Sale(models.Model):
     requisition_number = models.CharField(max_length=255, blank=True)
     # cart = models.ForeignKey('stock_carts.StockCart', blank=True, null=True, on_delete=models.CASCADE)
     # contact_list = models.ForeignKey('contacts.ContactList', blank=True, null=True, on_delete=models.CASCADE)
-   'requisition_number',els.DateTimeField(auto_now_add=True)
+    sold_on=models.DateTimeField(auto_now_add=True)
     Amount = models.IntegerField()
 
     # purchases
 
 class Purchases(models.Model):
     invoice_no = models.IntegerField()  # CHN starts at N=1
-    els.DateField()
+    date=models.DateTimeField(auto_now_add=True)
     warehouse = models.ForeignKey('Warehouse', on_delete=models.CASCADE)
     supplier = models.CharField(max_length=233)
     status = models.CharField(max_length=255, blank=True)

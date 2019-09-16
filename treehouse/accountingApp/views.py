@@ -29,7 +29,7 @@ def current_assets(request):
     sithdrawal= Withdrawal.objects.aggregate(Sum('amount'))
     amoun_deposits=deposits['amount__sum']
     amount=sithdrawal['amount__sum']
-    bankbalance= amoun_deposits - amount 
+    bankbalance= abs(amoun_deposits - amount) 
 
 
     context = {
