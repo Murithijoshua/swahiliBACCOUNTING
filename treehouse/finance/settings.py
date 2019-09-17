@@ -19,13 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'om1u)6fo1z@on89gu69(f#z%u8+r*q@e6c1!u0$(1!7bwpcqpv'
-
+SECRET_KEY =os.environ.get(''SECRET KEY','om1u)6fo1z@on89gu69(f#z%u8+r*q@e6c1!u0$(1!7bwpcqpv' )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1']
-
+# DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -86,6 +82,20 @@ WSGI_APPLICATION = 'finance.wsgi.application'
 #         }
 #     }
 # }
+
+DEBUG = False
+ALLOWED_HOSTS =  ['accounting-djangosb.herokuapp.com']
+EMAIL_HOST = 'stmp.gmail.com'
+EMAIL_HOST_USER = "brodiamyzalius@gmail.com"
+EMAIL_HOST_USER_PASSWORD=os.environ.get('PASSWORD')
+EMAIL_PORT = "587"
+EMAIL_USE_TLS ="True"
+DEFAULT_FROM_EMAIL = 'JOSHUA JOHNS <brodiamyzalius@gmail.com>'
+ADMINS =(
+    ('JOSHUA JOHNS','brodiamyzalius@gmail.com')
+)
+MANAGERS = ADMINS
+# # add this
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -96,7 +106,10 @@ DATABASES = {
         'PORT': '',
     }
 }
-
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

@@ -173,7 +173,7 @@ class Sale(models.Model):
 
 class Purchases(models.Model):
     invoice_no = models.IntegerField()  # CHN starts at N=1
-    date=models.DateTimeField(auto_now_add=True)
+    date= models.DateTimeField(auto_now_add=True)
     warehouse = models.ForeignKey('Warehouse', on_delete=models.CASCADE)
     supplier = models.CharField(max_length=233)
     status = models.CharField(max_length=255, blank=True)
